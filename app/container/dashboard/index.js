@@ -2,5 +2,6 @@
 
 require('anagular').module('BeerLog')
 .component('dashboard', {
-  template: require('./dashboard.html')
+  template: require('./dashboard.html'),
+  controller:
 })
