@@ -1,8 +1,9 @@
 'use strict';
 
 const angular = require('angular');
+const ngMarked = require('angular-marked');
 const uiRouter = require('angular-ui-router');
-angular.module('BeerLog', [uiRouter])
+angular.module('BeerLog', [uiRouter, ngMarked])
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.when('', '/admin');
 
@@ -20,12 +21,13 @@ angular.module('BeerLog', [uiRouter])
     {
       name: 'dashboard',
       url: '/dashboard',
-      template: '<h1> BEER! </h1>',
+      template: '<dashboard> </dashboard>',
     },
   ];
   routes.forEach(route => $stateProvider.state(route));
 }]);
 
+require('./service/page-service.js');
 require('./service/admin-service.js');
 
 require('./container/admin');
@@ -33,3 +35,5 @@ require('./container/dashboard');
 
 require('./component/login');
 require('./component/layout');
+require('./component/page-editor');
+require('./component/page-select');
