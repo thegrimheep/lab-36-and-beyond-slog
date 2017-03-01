@@ -1,6 +1,6 @@
 'use strict';
 
-require('angular').module('beerLog')
+require('angular').module('BeerLog')
 .component('home', {
   template: require('./home.html'),
   controller: ['$log', '$stateParams', '$location', 'pageService', HomeController],

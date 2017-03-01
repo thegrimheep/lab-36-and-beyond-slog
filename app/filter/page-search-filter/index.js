@@ -1,6 +1,6 @@
 'use strict';
 
-require('angular').module('slog')
+require('angular').module('BeerLog')
 .filter('pageSearchFilter', function(){
   return function(pages, searchTerm){
     console.log('pages', pages);

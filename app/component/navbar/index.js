@@ -1,6 +1,6 @@
 'use strict';
 
-require('angular').module('beerLog')
+require('angular').module('BeerLog')
 .component('navbar', {
   template: require('./navbar.html'),
   bindings: {
