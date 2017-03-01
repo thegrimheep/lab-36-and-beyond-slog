@@ -17,6 +17,11 @@ let plugins = [
   }),
 ];
 
+let output = {
+  path: `${__dirname}/build`,
+  filename: 'bundle-[hash].js',
+};
+
 if (production) {
   plugins = plugins.concat([
     new CleanPlugin(),
@@ -27,18 +32,15 @@ if (production) {
       },
     }),
   ]);
-  output.publicPath = //The cloudfront link in a string
+  output.publicPath = 'https://d2pxcpk8qcaii1.cloudfront.net';
 }
 
 module.exports = {
   plugins,
+  output,
   devtool: 'eval',
   devServer: { historyApiFallback: true },
   entry: `${__dirname}/app/entry.js`,
-  output: {
-    path: `${__dirname}/build`,
-    filename: 'bundle.js',
-  },
   module: {
     rules: [
       {
