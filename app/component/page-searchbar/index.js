@@ -4,7 +4,7 @@
 
 require('angular').module('BeerLog')
 .component('pageSearchbar', {
-  template: require('./page-search.html'),
+  template: require('./page-searchbar.html'),
   bindings: {
     pages: '<',
     handleSelect: '<',

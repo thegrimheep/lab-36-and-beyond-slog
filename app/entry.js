@@ -3,9 +3,13 @@
 const angular = require('angular');
 const ngMarked = require('angular-marked');
 const uiRouter = require('angular-ui-router');
-angular.module('BeerLog', [uiRouter, ngMarked])
+const ngClipboard = require('angular-clipboard');
+const ngAnimate = require('angular-animate');
+const ngTouch = require('angular-touch');
+
+angular.module('BeerLog', [uiRouter, ngMarked, ngClipboard.name, 'ngTouch', 'ngAnimate'])
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.when('', '/admin');
+  $urlRouterProvider.when('', '/home');
 
   let routes = [
     {
