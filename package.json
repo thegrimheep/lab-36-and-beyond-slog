@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "description": "401 JS --  Lab 32 crud ===",
   "main": "index.js",
+  "engines": {
+    "node": "6.9.2"
+  },
   "scripts": {
+    "start": "node main.js",
     "test": "./node_modules/mocha/bin/mocha ./server/test",
-    "watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot",
-    "start": "node main.js"
+    "heroku-postbuild": "./node_modules/webpack/bin/webpack.js",
+    "watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot"
   },
   "keywords": [],
   "author": "",
@@ -39,6 +43,7 @@
     "superagent": "^3.4.4",
     "url-loader": "^0.5.7",
     "webpack": "^2.2.1",
+    "webpack-clean-plugin": "^0.2.3",
     "webpack-dev-server": "^2.4.1"
   }
 }

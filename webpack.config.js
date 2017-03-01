@@ -5,6 +5,9 @@ require('dotenv').config();
 const webpack = require('webpack');
 const HtmlPlugin = require('html-webpack-plugin');
 const ExtractText = require('extract-text-webpack-plugin');
+const CleanPlugin = require('webpack-clean-plugin');
+
+let production = process.env.NODE_ENV === 'production';
 
 let plugins = [
   new HtmlPlugin({template: `${__dirname}/app/index.html`}),
@@ -13,6 +16,19 @@ let plugins = [
     __API_URL__: JSON.stringify(process.env.API_URL),
   }),
 ];
+
+if (production) {
+  plugins = plugins.concat([
+    new CleanPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      mangle: true,
+      compress: {
+        warnings: false,
+      },
+    }),
+  ]);
+  output.publicPath = //The cloudfront link in a string
+}
 
 module.exports = {
   plugins,
