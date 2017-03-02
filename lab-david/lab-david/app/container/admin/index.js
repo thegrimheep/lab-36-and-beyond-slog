@@ -11,7 +11,7 @@ require('angular').module('BeerLog')
 
 function AdminController($log, authService, $location) {
   this.$onInit = () => {
-    console.log('whats going on');
+    console.log('whats going on, did this appear?');
     authService.tokenFetch()
     .then(() => $location.path('/dashboard'));
     this.loginUser = {email: '', password: ''};
