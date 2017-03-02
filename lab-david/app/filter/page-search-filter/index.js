@@ -1,12 +1,9 @@
 'use strict';
 
 require('angular').module('BeerLog')
-.filter('pageSearchFilter', function(){
-  return function(pages, searchTerm){
-    console.log('pages', pages);
-    console.log('searchTerm', searchTerm);
+.filter('pageSearchFilter', function() {
+  return function(pages, searchTerm) {
     let fuzzyRegex = genorateFuzzyRegex(searchTerm);
-    console.log('fuzzyRegex', fuzzyRegex);
 
     return pages.filter(page => {
       return fuzzyRegex.test(page.title.toLowerCase());
@@ -14,7 +11,7 @@ require('angular').module('BeerLog')
   };
 });
 
-function genorateFuzzyRegex(term){
+function genorateFuzzyRegex(term) {
   if(!term) return /.*/;
   let fuzzy = term.toLowerCase().split('').join('.*');
   return new RegExp(`.*${fuzzy}.*`);
