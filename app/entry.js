@@ -45,7 +45,7 @@ require('./service/page-service.js');
 require('./service/admin-service.js');
 
 require('./filter/nav-filter');
-require('./filter/page-searchbar-filter');
+require('./filter/page-search-filter');
 
 require('./container/home');
 require('./container/admin');
