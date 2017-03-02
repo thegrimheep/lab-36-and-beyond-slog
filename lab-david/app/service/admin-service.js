@@ -34,7 +34,7 @@ function authService($log, $q, $window, $http) {
     let encoded = $window.btoa(`${user.email}:${user.password}`);
     let config = {
       headers: {
-        Accept: 'application.json',
+        Accept: 'application/json',
         Authorization: `Basic ${encoded}`,
       },
     };

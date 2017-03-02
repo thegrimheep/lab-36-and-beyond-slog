@@ -21,7 +21,7 @@ describe('testing auth router', function() {
         expect(!!res.text).to.equal(true);
         done();
       })
-      .catch(done)
+      .catch(done);
     });
     it('should return a 401', (done) => {
       superagent.get(`${baseURL}/api/login`)
