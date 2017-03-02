@@ -1,0 +1,22 @@
+<div class="page-editor">
+  <form novalidate
+  ng-submit="$ctrl.handleSubmit($ctrl.page)">
+
+    <textarea ng-model="$ctrl.page.content"
+    placeHolder="Write about beer life here:">
+    </textarea>
+
+    <input ng-model="$ctrl.page.title"
+    placeholder="Title of Beer experience">
+
+    <input type="checkbox"
+    ng-model="$ctrl.page.showInNav"
+    id="show-in-nav-checkout">
+
+    <label for="show-in-nav-checkbox">
+      Add To Navbar
+    </label>
+
+    <button>Share Your Beer</button>
+  </form>
+</div>
