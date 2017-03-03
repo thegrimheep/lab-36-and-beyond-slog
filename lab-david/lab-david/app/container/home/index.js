@@ -13,7 +13,7 @@ function HomeController($log, $stateParams, $location, pageService) {
     this.seachterm = '';
     this.navbarHandleSelect = (page) => {
       $location.path(`/home/${page.id}`);
-      this.searchterm = '';
+      this.searchTerm = '';
       console.log('hit navbarHandleSelect');
     };
     pageService.fetchAll()

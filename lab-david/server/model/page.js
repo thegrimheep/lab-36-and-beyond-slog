@@ -17,7 +17,8 @@ Page.fetchAll = function(){
     let data = snapShot.val();
     let pages = Object.keys(data).map(key => data[key]);
     return pages;
-  });
+  })
+  .catch(() => []);
 };
 
 Page.findByIdAndDelete = function(id){

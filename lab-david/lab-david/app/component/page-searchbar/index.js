@@ -8,6 +8,6 @@ require('angular').module('BeerLog')
   bindings: {
     pages: '<',
     handleSelect: '<',
-    searchterm: '=',
+    searchTerm: '=',
   },
 });
