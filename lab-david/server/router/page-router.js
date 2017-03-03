@@ -16,7 +16,10 @@ pageRouter.put('/api/page', bearerAuth, jsonParser, (req, res, next) => {
 
 pageRouter.get('/api/page', (req, res, next) => {
   Page.fetchAll()
-  .then(pages => res.json(pages))
+  .then(pages => {
+    console.log(req);
+    res.json(pages)
+  })
   .catch(next);
 });
 

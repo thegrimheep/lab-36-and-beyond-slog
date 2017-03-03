@@ -1,8 +1,8 @@
 <div class="page-searchbar">
-  <input class="search-input" ng-model="$ctrl.searchterm">
+  <input class="search-input" ng-model="$ctrl.searchTerm">
   <ul>
     <li
-      ng-repeat="item in $ctrl.pages | pageSearchFilter:$ctrl.searchterm"
+      ng-repeat="item in $ctrl.pages | pageSearchFilter:$ctrl.searchTerm"
       ng-click="$ctrl.handleSelect(item)"
 
     > {{ item.title }}</li>
